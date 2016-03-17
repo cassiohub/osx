@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OSX</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:title" content="OSX by Cassio Hubner">
+    <meta property="og:image" content="http://www.cassiohubner.com.br/osx/img/og.jpg">
+</head>
+<body>
+	<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <defs>
+	        <symbol id="icon-button-back" viewBox="0 0 597 1024">
+	            <title>button-back</title>
+	            <path class="path1"
+	                  d="M485.69 62.304l-455.443 460.821 448.232 446.757c16.69 16.635 43.705 16.59 60.34-0.099s16.59-43.705-0.099-60.34l-418.14-416.764 0.226 60.212 425.577-430.603c16.564-16.76 16.406-43.774-0.354-60.339s-43.774-16.406-60.339 0.354v0z"></path>
+	        </symbol>
+	        <symbol id="icon-button-forward" viewBox="0 0 597 1024">
+	            <title>button-forward</title>
+	            <path class="path1"
+	                  d="M50.951 122.288l425.577 430.603 0.226-60.212-418.14 416.764c-16.69 16.635-16.734 43.65-0.099 60.34s43.65 16.734 60.34 0.099l448.232-446.757-455.443-460.821c-16.564-16.76-43.579-16.918-60.339-0.354s-16.918 43.579-0.354 60.339v0z"></path>
+	        </symbol>
+	        <symbol id="icon-darr" viewBox="0 0 1843 1024">
+	            <title>darr</title>
+	            <path class="path1"
+	                  d="M153.058 286.047l767.421 660.491 789.247-651.085c43.625-35.989 49.816-100.528 13.828-144.154s-100.528-49.816-144.154-13.828l-722.685 596.176 131.961 1.378-702.021-604.204c-42.864-36.892-107.519-32.050-144.411 10.814s-32.050 107.519 10.814 144.411v0z"></path>
+	        </symbol>
+	        <symbol id="icon-notification-center" viewBox="0 0 1843 1024">
+	            <title>notification-center</title>
+	            <path class="path1"
+	                  d="M409.6 819.2v204.8h1433.6v-204.8h-1433.6zM0 819.2v204.8h204.8v-204.8h-204.8zM409.6 409.6v204.8h1126.4v-204.8h-1126.4zM0 409.6v204.8h204.8v-204.8h-204.8zM409.6 0v204.8h1433.6v-204.8h-1433.6zM0 0v204.8h204.8v-204.8h-204.8z"></path>
+	        </symbol>
+	        <symbol id="icon-sort-by" viewBox="0 0 1195 1024">
+	            <title>sort-by</title>
+	            <path class="path1"
+	                  d="M85.333 0v0 341.333l-85.333-85.333h341.333l-85.333 85.333v-341.333l85.333 85.333h-341.333l85.333-85.333zM0 0h341.333v341.333h-341.333v-341.333zM512 0v341.333l-85.333-85.333h341.333l-85.333 85.333v-341.333l85.333 85.333h-341.333l85.333-85.333zM426.667 0h341.333v341.333h-341.333v-341.333zM938.667 0v341.333l-85.333-85.333h341.333l-85.333 85.333v-341.333l85.333 85.333h-341.333l85.333-85.333zM853.333 0h341.333v341.333h-341.333v-341.333zM85.333 597.333v341.333l-85.333-85.333h341.333l-85.333 85.333v-341.333l85.333 85.333h-341.333l85.333-85.333zM0 597.333h341.333v341.333h-341.333v-341.333zM512 597.333v341.333l-85.333-85.333h341.333l-85.333 85.333v-341.333l85.333 85.333h-341.333l85.333-85.333zM426.667 597.333h341.333v341.333h-341.333v-341.333zM938.667 597.333v341.333l-85.333-85.333h341.333l-85.333 85.333v-341.333l85.333 85.333h-341.333l85.333-85.333zM853.333 597.333v0h341.333v341.333h-341.333v-341.333z"></path>
+	        </symbol>
+	        <symbol id="icon-spotlight" viewBox="0 0 1062 1024">
+	            <title>spotlight</title>
+	            <path class="path1"
+	                  d="M629.542 664.215c-66.785 58.705-154.377 94.304-250.283 94.304-209.459 0-379.259-169.8-379.259-379.259s169.8-379.259 379.259-379.259c209.459 0 379.259 169.8 379.259 379.259 0 86.22-28.771 165.721-77.237 229.424l362.076 362.076-53.635 53.635-360.18-360.18zM379.259 682.667c167.567 0 303.407-135.84 303.407-303.407s-135.84-303.407-303.407-303.407c-167.567 0-303.407 135.84-303.407 303.407s135.84 303.407 303.407 303.407z"></path>
+	        </symbol>
+	        <symbol id="icon-view-as-columns" viewBox="0 0 1638 1024">
+	            <title>view-as-columns</title>
+	            <path class="path1"
+	                  d="M102.4 102.4v0 819.2h1433.6v-819.2h-1433.6zM102.4 0v0h1536v1024h-1638.4v-1024h102.4z"></path>
+	            <path class="path2" d="M512 51.2v972.8h102.4v-1024h-102.4v51.2z"></path>
+	            <path class="path3" d="M1024 51.2v972.8h102.4v-1024h-102.4v51.2z"></path>
+	        </symbol>
+	        <symbol id="icon-view-as-coverflow" viewBox="0 0 1434 1024">
+	            <title>view-as-coverflow</title>
+	            <path class="path1"
+	                  d="M512 307.2v409.6h409.6v-409.6h-409.6zM409.6 307.2v0-102.4h614.4v614.4h-614.4v-512z"></path>
+	            <path class="path2" d="M204.8 102.4h102.4v819.2h-102.4v-819.2z"></path>
+	            <path class="path3" d="M1126.4 102.4h102.4v819.2h-102.4v-819.2z"></path>
+	            <path class="path4" d="M1331.2 0h102.4v1024h-102.4v-1024z"></path>
+	            <path class="path5" d="M0 0h102.4v1024h-102.4v-1024z"></path>
+	        </symbol>
+	        <symbol id="icon-view-as-icons" viewBox="0 0 1024 1024">
+	            <title>view-as-icons</title>
+	            <path class="path1"
+	                  d="M102.4 102.4v0 204.8h204.8v-204.8h-204.8zM102.4 0v0h307.2v409.6h-409.6v-409.6h102.4z"></path>
+	            <path class="path2"
+	                  d="M716.8 102.4v0 204.8h204.8v-204.8h-204.8zM716.8 0v0h307.2v409.6h-409.6v-409.6h102.4z"></path>
+	            <path class="path3"
+	                  d="M716.8 716.8v0 204.8h204.8v-204.8h-204.8zM716.8 614.4v0h307.2v409.6h-409.6v-409.6h102.4z"></path>
+	            <path class="path4"
+	                  d="M102.4 716.8v0 204.8h204.8v-204.8h-204.8zM102.4 614.4v0h307.2v409.6h-409.6v-409.6h102.4z"></path>
+	        </symbol>
+	        <symbol id="icon-view-as-list" viewBox="0 0 1434 1024">
+	            <title>view-as-list</title>
+	            <path class="path1" d="M0 0h1433.6v102.4h-1433.6v-102.4z"></path>
+	            <path class="path2" d="M0 307.2h1433.6v102.4h-1433.6v-102.4z"></path>
+	            <path class="path3" d="M0 614.4h1433.6v102.4h-1433.6v-102.4z"></path>
+	            <path class="path4" d="M0 921.6h1433.6v102.4h-1433.6v-102.4z"></path>
+	        </symbol>
+	        <symbol id="icon-wifi" viewBox="0 0 1434 1024">
+	            <title>wifi</title>
+	            <path class="path1"
+	                  d="M21.537 321.459c144.722-193.040 401.996-321.459 695.263-321.459s550.542 128.42 695.263 321.459v0l-48.635 48.635c-130.749-180.678-371.397-301.827-646.629-301.827s-515.88 121.15-646.629 301.827l-48.635-48.635zM438.976 738.899c80.858-57.317 176-90.365 277.824-90.365s196.966 33.048 277.824 90.365l44.059-44.059c-92.107-72.377-202.806-114.573-321.883-114.573s-229.775 42.197-321.883 114.573l44.059 44.059zM253.899 553.822c118.768-110.245 282.328-178.355 462.901-178.355s344.133 68.11 462.901 178.355l45.345-45.345c-129.824-124.319-309.598-201.277-508.245-201.277s-378.422 76.958-508.245 201.277l45.345 45.345zM618.292 918.214c10.714-8.625 43.55-30.748 98.508-30.748s87.795 22.122 98.508 30.748v0l-98.508 98.508-98.508-98.508z"></path>
+	        </symbol>
+	    </defs>
+    </svg>
+
+	<header id="top-menu">
+		<nav class="navbar">
+			<ul class="menu app-menu">
+				<li class="menu__item system-menu">
+					<span class="apple-logo"></span>
+					<ul class="dropdown-menu">
+						<li class="dropdown-menu__item">About This Mac</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">System Preferences... </li>
+						<li class="dropdown-menu__item">App Store... </li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item sub-menu__link">Recent Items... <span>▶</span>
+							<ul class="dropdown-menu dropdown-menu__sub-menu">
+								<li class="dropdown-menu__item disabled">No Recent Items</span></li>
+								<li class="dropdown-menu__item separator"></li>
+								<li class="dropdown-menu__item">System Preferences</span></li>
+							</ul>
+						</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Force Quit... <span>&#9003;&#8984;&#9099;︎</span></li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Sleep</li>
+						<li class="dropdown-menu__item">Restart</li>
+						<li class="dropdown-menu__item">Shut Down...</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Log Out Cassio Hubner...<span>&#8679;&#8984;Q</span></li>
+					</ul>
+				</li>
+				<li class="menu__item selected">
+					<strong>Finder</strong>
+					<ul class="dropdown-menu">
+						<li class="dropdown-menu__item">About Finder</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Preferences... <span>&#8984;,</span></li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Empty Trash... <span>⇧&#8984;&#9003;</span></li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item sub-menu__link">Services <span>▶︎</span>
+							<ul class="dropdown-menu dropdown-menu__sub-menu">
+								<li class="dropdown-menu__item disabled">No Services Available</span></li>
+								<li class="dropdown-menu__item separator"></li>
+								<li class="dropdown-menu__item">System Preferences</span></li>
+							</ul>
+						</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Hide Finder <span>&#8984;H</span></li>
+						<li class="dropdown-menu__item">Hide Others <span>&#8997;&#8984;H</span></li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item disabled">Show All</li>
+					</ul>
+				</li>
+				<li class="menu__item">File</li>
+				<li class="menu__item">Edit</li>
+				<li class="menu__item">View</li>
+				<li class="menu__item">Go</li>
+				<li class="menu__item">Windows</li>
+				<li class="menu__item">Help</li>
+			</ul>
+			<ul class="menu util-menu">
+				<li class="menu__item">
+					<svg height="24px" version="1.1" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon icon-volume">
+					<g fill="none" fill-rule="evenodd" id="miu" stroke="none" stroke-width="1">
+					<g id="Artboard-1" transform="translate(-683.000000, -551.000000)">
+					<g id="slice" transform="translate(215.000000, 119.000000)"/>
+					<path d="M687.125,559.8 L685.041667,559.8 C684,559.8 684,560.866667 684,560.866667 L684,565.133333 C684,565.133333 684,566.2 685.041667,566.2 L687.125,566.2 L695,571 L695,555 L687.125,559.8 Z M701.604021,555.269989 C703.691674,557.189086 705,559.942759 705,563.002007 C705,566.151387 703.613446,568.976921 701.417486,570.90146 L700.615994,570.271717 C702.685249,568.529054 704,565.919069 704,563.002007 C704,560.191061 702.779165,557.665257 700.838796,555.925896 L701.604021,555.269989 Z M699.146204,557.37669 C700.891101,558.844199 702,561.043605 702,563.502007 C702,565.813711 701.019495,567.896405 699.451677,569.356896 L698.654446,568.730501 C700.09362,567.448425 701,565.581064 701,563.502007 C701,561.291536 699.975416,559.320368 698.375249,558.037508 L699.146204,557.37669 Z M696.818718,559.371677 C698.135703,560.27218 699,561.78616 699,563.502007 C699,565.116879 698.234435,566.552944 697.04644,567.467067 L696.228376,566.824303 C697.29691,566.106184 698,564.886203 698,563.502007 C698,562.031868 697.206892,560.74697 696.0252,560.051836 L696.818718,559.371677 L696.818718,559.371677 Z" fill="#3e4145" id="device-volume-loudspeaker-speaker-up-glyph"/></path></g></g></g>
+					</svg>
+				</li>
+				<li class="menu__item">
+					<svg class="icon icon-wifi">
+                        <use xlink:href="#icon-wifi"></use>
+                    </svg>
+				</li>
+				<li class="menu__item">
+					<span id="time-box" class="time">Sun 0:00 PM</span>
+					<ul class="dropdown-menu dropdown-menu__time-menu">
+						<li class="dropdown-menu__item disabled full-time">Sun, January 1, 1970</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item disabled">View As Analog</li>
+						<li class="dropdown-menu__item" style="padding-left: 5px;"> 
+							<span style="float:left; margin-right:10px;">✓</span> View As Digital 
+						</li>
+						<li class="dropdown-menu__item separator"></li>
+						<li class="dropdown-menu__item">Open Date & Time Preferences...</li>
+					</ul>
+				</li>
+				<li class="menu__item">
+					<svg class="icon icon-spotlight">
+                        <use xlink:href="#icon-spotlight"></use>
+                    </svg>
+				</li>
+				<li class="menu__item">
+					<svg class="icon icon-notification-center">
+                        <use xlink:href="#icon-notification-center"></use>
+                    </svg>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="desktop">
+
+		<div id="app-finder" class="app-window app-window__finder draggable-window resizable-window window-closed">
+			<header>
+				<div class="ui-window-nav first-row">
+					<div class="window-options">
+						<span class="window-option__icon close-icon"></span>
+						<span class="window-option__icon mini-icon"></span>
+						<span class="window-option__icon max-icon"></span>
+					</div>
+
+					<div class="window-title">
+						<img src="img/icons/sidebar-desktop.png" alt="Desktop" class="folder-icon">
+						<span>Desktop</span>
+					</div>
+				</div>
+				<div class="ui-window-nav ui-window-nav__options-menu">
+					<div class="ui-button-area window-navigation">
+						<span class="ui-button">
+							<svg class="icon icon-button-back">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-button-back"></use>
+                            </svg></span>
+						<span class="ui-button disabled">
+							<svg class="icon icon-button-forward">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-button-forward"></use>
+                            </svg>
+						</span>
+					</div>
+
+					<div class="ui-button-area ui-button-group folder-options">
+						<span class="ui-button ui-button-group__item">
+							<svg class="icon icon-view-as-icons">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view-as-icons"></use>
+                            </svg>
+						</span>
+						<span class="ui-button ui-button-group__item">
+							<svg class="icon icon-view-as-list">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view-as-list"></use>
+                            </svg>
+						</span>
+						<span class="ui-button ui-button-group__item selected">
+							<svg class="icon icon-view-as-columns">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view-as-columns"></use>
+                            </svg>
+						</span>
+						<span class="ui-button ui-button-group__item">
+							<svg class="icon icon-view-as-coverflow">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view-as-coverflow"></use>
+                            </svg>
+						</span>
+					</div>
+
+					<div class="ui-search">
+						<form action="#">
+							<input type="text" class="text-input" placeholder="Search">
+							<svg class="icon icon-spotlight">
+		                        <use xlink:href="#icon-spotlight"></use>
+		                    </svg>
+						</form>
+					</div>
+				</div>
+			</header>
+
+			<div class="window-body">
+				<aside class="window-sidebar resizable-sidebar">
+					<div class="sidebar-subtitle">Favorites<span class="toggle">Hide</span></div>
+					<ul class="sidebar-list sortable">
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-airdrop.png" alt="AirDrop"></i>
+							AirDrop
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-applications.png" alt="Applications"></i>
+							Applications
+						</li>
+						<li class="sidebar-list__item selected">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-desktop.png" alt="Desktop"></i>
+							Desktop
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-documents.png" alt="Documents"></i>
+							Documents
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-downloads.png" alt="Downloads"></i>
+							Downloads
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-movies.png" alt="Movies"></i>
+							Movies
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-music.png" alt="Music"></i>
+							Music
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-pictures.png" alt="Pictures"></i>
+							Pictures
+						</li>
+						<li class="sidebar-list__item">
+							<i class="icon-sidebar"><img src="img/icons/sidebar-home.png" alt="Home"></i>
+							Cássio
+						</li>
+					</ul>
+				</aside>
+				<section class="window-content">
+					
+				</section>
+			</div>
+		</div>
+
+		<div id="app-safari" class="app-window app-window__safari draggable-window resizable-window window-closed tabs-on">
+			<header>
+				<div class="ui-window-nav first-row">
+					<div class="window-options">
+						<span class="window-option__icon close-icon"></span>
+						<span class="window-option__icon mini-icon"></span>
+						<span class="window-option__icon max-icon"></span>
+					</div>
+					<div class="ui-window-nav ui-window-nav__options-menu">
+						<div class="ui-button-area window-navigation">
+							<span class="ui-button">
+								<svg class="icon icon-button-back">
+	                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-button-back"></use>
+	                            </svg></span>
+							<span class="ui-button disabled">
+								<svg class="icon icon-button-forward">
+	                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-button-forward"></use>
+	                            </svg>
+							</span>
+						</div>
+
+						<div class="ui-search">
+							<form action="#">
+								<input type="text" class="text-input" placeholder="Search or enter a website name">
+							</form>
+						</div>
+
+						<div class="ui-new-tab">
+							<span class="ui-new-tab__button">+</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui-tabs">
+					<ul class="ui-tabs__list">
+						<li class="ui-tabs__item current-tab" data-tab="codepen">
+							<span class="close-tab"></span><span class="ui-tabs__item-title">CodePen</span>
+						</li>
+						<li class="ui-tabs__item" data-tab="instaranking">
+							<span class="close-tab"></span><span class="ui-tabs__item-title">Instaranking</span>
+						</li>
+					</ul>
+				</div>
+			</header>
+
+			<div class="window-body">
+				<div class="overlay"></div>
+				<iframe src="http://cassiohubner.com.br/instaranking" frameborder="0" data-tab="instaranking"></iframe>
+				<iframe src="http://codepen.io" frameborder="0" data-tab="codepen"></iframe>
+			</div>
+		</div>
+
+		<div id="dock">
+			<ul class="app-list sortable">
+				<li class="dock-app dock-app__finder opened">
+					<div href="javascript:void(0);" data-app="finder">
+						<img src="img/finder-icon.png" alt="Finder">
+					</div>
+				</li>
+				<li class="dock-app dock-app__safari opened">
+					<div href="javascript:void(0);" data-app="safari">
+						<img src="img/safari-icon.png" alt="Safari">
+					</div>
+				</li>
+				<li class="dock-app dock-app__preferences">
+					<div href="javascript:void(0);" data-app="preferences">
+						<img src="img/system-preferences-icon.png" alt="System Preferences">
+					</div>
+				</li>
+				<li class="dock-app dock-app__mail">
+					<div href="javascript:void(0);" data-app="mail">
+						<img src="img/mail-icon.png" alt="Mail">
+					</div>
+				</li>
+				<li class="dock-app dock-app__appstore">
+					<div href="javascript:void(0);" data-app="appstore">
+						<img src="img/appstore-icon.png" alt="App Store">
+					</div>
+				</li>
+				<li class="dock-app dock-app__photos">
+					<div href="javascript:void(0);" data-app="photos">
+						<img src="img/photos-icon.png" alt="Photos">
+					</div>
+				</li>
+				<li class="dock-app dock-app__terminal">
+					<div href="javascript:void(0);" data-app="terminal">
+						<img src="img/terminal-icon.png" alt="Terminal">
+					</div>
+				</li>
+				<li class="dock-app dock-app__sublime">
+					<div href="javascript:void(0);" data-app="sublime">
+						<img src="img/sublime-icon.png" alt="Sublime Text">
+					</div>
+				</li>
+				<li class="separator__vertical"></li>
+				<li class="dock-app dock-app__trash">
+					<div href="javascript:void(0);" data-app="trash">
+						<img src="img/trash-icon.png" alt="Trash">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
