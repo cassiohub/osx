@@ -1,0 +1,872 @@
+/* VARS */
+$base__line-height = 1.4em
+$base__font-size = 15px
+
+$color__primary-blue = #3c95fa
+$color__primary-grey = #e8eff6
+$color__primary-grey_rgba = rgba(232, 239, 246, 0.90)
+$color__primary-border-grey = #7e8d9b
+$color__box-shadow = 0 3px 10px 2px rgba(0, 0, 0, 0.15);
+
+$color__primary-grey-text = #3e4145
+
+html
+	height 100%;
+	
+*, *:before, *:after
+	box-sizing border-box
+	cursor default
+
+body
+	background url("../img/desktop-background.jpg") 50% 0
+	background-size cover
+	font-family "Helvetica Neue", sans-serif
+	font-weight 400
+	height 100%
+	margin 0
+	-moz-user-select none
+	-webkit-user-select none
+	-ms-user-select none
+	overflow hidden
+
+img
+	max-width 100%
+
+a 
+	cursor default
+	text-decoration none
+
+ol,
+ul
+	list-style none
+	margin 0
+	padding 0
+
+p 
+	margin 0
+
+strong 
+	font-weight 700
+
+
+/* SVG Icons */
+.icon
+	display inline-block
+	height 1em
+	vertical-align middle
+	width 1em
+
+	.menu-bar &
+		color inherit
+		line-height 22px
+		margin-top -2px
+		fill #fff
+
+	&-button-back
+		width 0.5830078125em
+		margin-right 1px
+	&-button-forward
+		width 0.5830078125em
+		margin-left 1px
+	&-darr
+		width 1.7998046875em
+	&-notification-center
+		font-size 10px
+		width 1.7998046875em
+	&-sort-by
+		width 1.1669921875em
+	&-spotlight
+		width 1.037109375em
+		margin-top -1px
+		.menu-bar &
+			font-size 14px
+	&-view-as-columns
+		width 1.599609375em
+	&-view-as-coverflow
+		width 1.400390625em
+	&-view-as-list
+		width 1.400390625em
+	&-view-as-icons
+		width 1.400390625em
+	&-wifi
+		width 1.400390625em
+		margin-top -1px
+	&-volume
+		width 22px
+		height 20px
+		margin-top -2px
+
+
+
+/* Header Menu */
+#top-menu
+	width 100%
+	position fixed
+	top 0px
+	background $color__primary-grey_rgba
+	border-bottom 0.5px solid rgba(126, 141, 155, 0.2)
+	vertical-align bottom
+	z-index 99
+
+.navbar .menu
+	height 22px
+	display flex
+	flex 0 1 auto
+	flex-flow row wrap
+	justify-content flex-start
+	align-items stretch
+	
+	li.menu__item
+		line-height $base__line-height
+		padding 0 9px
+		font-size $base__font-size
+		color $color__primary-grey-text
+		position relative
+		
+		&:last-child
+			margin-right 13px
+		
+		&:hover
+			background-color $color__primary-blue
+			color #FFF
+			
+			svg,
+			path
+				fill #FFF
+
+		&.system-menu
+			margin-left 11px
+			line-height 21px
+		
+		.apple-logo
+			font-size 18px
+		
+
+	.dropdown-menu
+		width 250px
+		display none
+		flex-flow column wrap
+		position absolute
+		left 0px
+		top 100%
+		background $color__primary-grey_rgba
+		padding 3px 0
+		border-radius 0px 0px 5px 5px
+		border 0.5px solid rgba(126, 141, 155, 0.4)
+		box-shadow $color__box-shadow
+		
+		&__item
+			font-size 14px
+			flex 0 0 2px
+			color $color__primary-grey-text
+			padding 0px 12px 0px 22px
+			line-height $base__line-height + 0.1
+			white-space nowrap
+			
+			&:hover
+				background-color $color__primary-blue
+				color #FFF
+				
+			&.separator
+				background rgba(0, 0, 0, 0.08)
+				height 2px
+				margin 3px -1px
+				
+			span
+				float right
+				text-align right
+			
+			&.disabled,
+			&.disabled:hover
+				color rgba(0,0,0,0.5)
+				background initial
+		
+		.sub-menu__link
+			position relative
+			
+			&:hover .dropdown-menu__sub-menu
+				display flex
+				left 100%
+				top -1px
+				border-radius 5px
+
+		&.dropdown-menu__time-menu
+			left auto
+			right 0
+
+	li.menu__item:hover > .dropdown-menu
+		display flex
+		
+.navbar .app-menu
+	float left
+	
+.navbar .util-menu
+	float right
+	
+
+#desktop
+	position relative
+	width 100%
+	height 100vh
+	top 22px
+	
+
+/* DOCK */
+#dock
+	width 100%
+	height 60px
+	display flex
+	flex-flow row nowrap
+	justify-content center
+	position fixed
+	bottom 0
+	left 0
+	z-index 99
+
+	.app-list
+		display flex
+		flex-flow row nowrap
+		justify-content center
+		padding 5px 7px
+		background rgba(232, 239, 246, 0.65)
+		border-radius 5px 5px 0px 0px
+		box-shadow $color__box-shadow
+		
+	.dock-app
+		flex initial
+		width @height - 15px
+		height @width
+		transition all 0.3s ease
+		position relative
+		
+		&.opened::after
+			content ''
+			display block
+			width 5px
+			height 5px 
+			background $color__primary-grey-text
+			border-radius 10px
+			margin auto
+			margin-top -2px
+		
+		&:hover
+			position relative
+			margin-top -10px
+			transition all 0.3s ease
+			transform scale(1.3)
+			margin-left 5px
+			margin-right 5px
+			
+			> div:before,
+			> div:after
+				display block
+				opacity 1
+		
+		& div:before
+			content attr(data-app)
+			text-transform capitalize
+			font-size 9px
+			background $color__primary-grey_rgba
+			border-radius 5px
+			font-weight 300
+			display none
+			opacity 0
+			padding 5px 10px
+			text-align center
+			position absolute
+			top -30px
+			left 50%
+			transform translate(-50%, 0)
+			-webkit-transform translate(-50%, 0)
+			white-space nowrap
+		
+		& div:after
+			content ''
+			display block
+			width 0
+			height 0
+			border-style solid
+			border-width 5px 5.5px 0 5.5px
+			border-color $color__primary-grey_rgba transparent transparent transparent
+			position absolute
+			top -9px
+			left 50%
+			transform translate(-50%, 0)
+			-webkit-transform translate(-50%, 0)
+			white-space nowrap
+			display none
+			opacity 0
+
+			
+
+.separator__vertical
+	width 1px
+	height 45px
+	margin 2px 5px 0px 5px
+	background $color__primary-border-grey
+		
+
+/* App Window */
+.app-window 
+	width 770px
+	height 430px
+	background white
+	border-radius 6px
+	border 0.5px solid rgba(126, 141, 155, 0.2)
+	box-shadow $color__box-shadow
+	position absolute
+	color $color__primary-grey-text
+	transition 0.5s all
+	overflow hidden
+
+	> header
+		width 100%
+		height 55px
+		border-radius 6px 6px 0px 0px
+		background-image: linear-gradient(#f2f1f2 1.8%, #eeecee 2.7%, #dbd9db 76.3%, #dad9da 78.1%, #dad8da 80.9%, #d9d8d9 83.6%, #d9d7d9 86.3%, #d7d5d7 95.4%, #d3d1d3 99%, #b8b6b8 99%, #b8b6b8)
+		
+		.ui-window-nav
+			width inherit
+			height 25px
+			padding 6px 8px 5px
+			position relative
+			display flex
+			+ .ui-window-nav
+				padding-top 0px
+			
+			&__options-menu
+				justify-content space-between
+
+		.window-title
+			width inherit
+			text-align center
+			font-size 13px
+			position absolute
+			top 6px
+			left 0
+			img
+				width 14px
+				margin-right 2px
+				display inline-block
+				vertical-align top
+				opacity 0.75
+		
+		.window-options
+			position relative
+			display flex
+			flex-flow row nowrap
+			justify-content flex-start
+			z-index 2
+			
+			.window-option__icon
+				flex: none
+				width 12px
+				height @width
+				border-radius @width
+				margin-right 8px
+				border 0.5px solid rgba(0,0,0,0.2)
+				position relative
+				
+				&::after,
+				&::before
+					display none
+					
+			.close-icon
+				background #fd5e59
+				&::after
+					content "+"
+					position absolute
+					top -5px
+					left 1.5px
+					font-size 16px
+					transform rotate(45deg)
+					color #761212
+			.mini-icon
+				background #ffbb3b
+				&::after
+					content ""
+					width 8px
+					height 1px
+					background rgba(0,0,0,0.3)
+					position absolute
+					top 4px
+					left 1px
+			.max-icon
+				background #34c748
+				&::after,
+				&::before
+					content ""
+					width 0
+					height 0
+					border-style solid
+					border-width 0 5px 5px 0
+					border-color transparent rgba(0,0,0,0.3) transparent transparent
+					position absolute
+					top 2px
+					left 3px
+				&::before
+					border-width 5px 0 0 5px
+					border-color transparent transparent transparent rgba(0,0,0,0.3)
+					top 3px
+					left 2px
+		
+			&:hover .window-option__icon::after,
+			&:hover .window-option__icon::before
+				display block
+			
+		.window-navigation
+			> span
+				margin-right 1px
+				
+				&:active
+					background-image linear-gradient(rgba(0, 0, 0, 0), #f2f1f2 0.7%, #d3d3d3)
+					box-shadow 0 1px 0 0 #c5c3c5, 0 1px 0 0 #c5c3c5
+
+	.window-body
+		width 100%
+		height calc(100% - 55px)
+		overflow hidden
+		.overlay
+			display none
+			position absolute
+			top 0
+			left 0
+			bottom 0
+			width 100%
+		
+	.window-sidebar
+		width 153px
+		height 100%
+		padding 10px 0px
+		background #f6f6f6
+		border-right 1px solid #cfd8de
+		font-size 13px
+		overflow scroll
+		position relative
+		
+		.sidebar-subtitle
+			font-size 11px
+			font-weight 700
+			padding-left 9px
+			padding-right 12px
+			margin-bottom 4px
+			opacity 0.7
+			
+			span
+				float right
+				display none
+		
+			&:hover span
+				display block
+				
+		.sidebar-list
+			
+			&__item
+				width 100%
+				padding 5px 0px 0px 19px
+				overflow hidden
+				text-overflow ellipsis
+				white-space nowrap
+				
+				.icon-sidebar
+					width 18px
+					display inline-block
+					margin-right 4px
+					vertical-align top
+					opacity 0.55
+
+				&.selected
+					background #cecece
+					i
+						opacity 1
+
+	&.disabled-window
+		z-index 97
+		border 0.5px solid rgba(126, 141, 155, 0.65)
+		> header
+			background-image none
+			background #f6f6f6
+			border-bottom 1px solid rgba(173, 173, 173, 0.5)
+			
+			.ui-button
+				border 1px solid #dbdbdb
+				box-shadow none
+				background-image none
+				height 23px
+				
+				&.ui-button-group__item:first-child
+					border-right 0
+				&.ui-button-group__item:last-child
+					border-left 0
+			
+			.ui-new-tab
+				background #e3e3e3
+				border-color #d2d2d2
+				color #8c8c8c
+				bottom -7px
+
+			.window-navigation > span
+				margin-right 0px 
+				
+			.window-options .window-option__icon
+				background #DDDDDD
+				&:hover .window-option__icon
+					background initial
+					
+			.window-title
+				opacity 0.5
+
+			.ui-button-group__item
+				.icon
+					color #b2b2b2
+					fill #b2b2b2
+				&.selected
+					background #e3e3e3
+					.icon
+						color #b2b2b2
+						fill #b2b2b2
+			
+			.ui-search .text-input
+				background-color transparent
+				box-shadow none
+				border 1px solid #dbdbdb
+				opacity 0.5
+
+	&.current-window
+		z-index 98
+	&.window-opened
+		display block
+	&.window-closed
+		display none
+
+	&__finder
+		top 100px
+		left 300px
+	
+	&__safari
+		top 10px
+		left 20px
+		width 80%
+		height 85vh
+		
+		> header
+			height 37px
+			.window-options
+				padding-top 5px
+				padding-left 5px
+				margin-right 5px
+			.ui-window-nav
+				height auto
+				padding-top 7px
+			.ui-window-nav__options-menu
+				padding 0px
+				justify-content flex-start
+				
+		&.tabs-on 
+			> header
+				height 59px
+				.ui-window-nav
+					height 45px
+			.window-body
+				height calc(100% - 58px)
+			
+		.ui-search
+			width 85%
+			text-align center
+			.text-input
+				max-width 525px
+				padding-left 22%
+		.ui-new-tab
+			position absolute
+			right -8px
+			bottom -7px
+		.window-body
+			height calc(100% - 37px)
+			overflow scroll
+			position relative
+			
+			iframe
+				width 100%
+				height 100%
+				position absolute
+				top 0
+				z-index 3
+				background #FFF
+
+	&.ui-draggable-dragging,
+	&.ui-resizable-resizing
+		transition initial
+
+	&.ui-resizable-resizing
+		.overlay
+			display block
+			z-index 5
+
+/* UI Buttons */
+.ui-button
+	border-radius 4px
+	background-image linear-gradient(rgba(0, 0, 0, 0), #fdfdfd 0.7%, #f2f2f2)
+	text-align center
+	box-shadow 0 1px 0 0 #c5c3c5, inset 0 1px 0 0 #fff
+	width 24px
+	height 22px
+	display block
+	float left
+	.icon
+		font-size 13px
+		fill #737373
+		color #737373
+	&.disabled .icon
+		fill #c6c6c6
+		color #c6c6c6
+				
+.ui-button-group
+	&__item
+		width 27px
+		border-radius 0
+		border-left 1px solid #E2E2E2
+		border-right 0
+		
+		&:first-child
+			border-radius 4px 0px 0px 4px
+			border 0
+		&:last-child
+			border-radius 0px 4px 4px 0px 
+			border 0
+			border-left 1px solid #E2E2E2
+		
+		&.selected
+			background #6c6b6c
+			border 1px solid #616061
+			width @width + 1
+			box-shadow 0 1px 0 0 #c5c3c5, inset 0 1px 0 0 transparent
+			.icon
+				color #FFF
+				fill #FFF
+				margin-top -1px
+		
+			+ .ui-button-group__item
+				border-left 0
+				
+/* UI Folder Options */
+.folder-options
+	.icon
+		font-size 10px
+
+.text-input
+	width 100%
+	display inline-block
+	border 0
+	border-radius 4px
+	height 22px
+	box-shadow 0 1px 0 0 #c5c3c5, 1px 0 0 0 #c9c8ca, inset 0 1px 0 0 #fff, -1px 0 0 0 #c9c8ca
+	background-image linear-gradient(rgba(0, 0, 0, 0), #fdfdfd 0.7%, #f2f2f2)
+	padding-top 3px
+	color $color__primary-grey-text
+	font 13px "Helvetica Neue", sans-serif
+	font-weight 400
+	
+	&:focus
+		outline none
+
+::-webkit-input-placeholder 
+	color #a2a1a2
+	font 13px "Helvetica Neue", sans-serif
+	font-weight 400
+:-moz-placeholder
+	color #a2a1a2
+	font 13px "Helvetica Neue", sans-serif
+	font-weight 400
+::-moz-placeholder
+	color #a2a1a2
+	font 13px "Helvetica Neue", sans-serif
+	font-weight 400
+:-ms-input-placeholder 
+	color #a2a1a2
+	font 13px "Helvetica Neue", sans-serif
+	font-weight 400
+	
+/* UI Search */
+.ui-search
+	width 30%
+	form
+		position relative
+		.icon
+			fill #737373
+			position absolute
+			left 30%
+			top 4px
+			width 12px
+			transition all 0.5s
+	.text-input
+		max-width 325px
+		padding 0px 10px 0px 40%
+		transition 0.5s padding
+		&:focus
+			background #FFF
+			outline none
+			padding-left 25px
+			transition 0.5s padding
+			+ .icon
+				left 6px
+				transition all 0.3s
+
+/* Resizable Theme */
+.ui-resizable
+	
+	&-handle
+		display block
+		fontsize 0.1px
+		position absolute
+		zindex: 99999
+
+	&-n
+		cursor ns-resize
+		height 5px
+		left 0
+		top -5px
+		width 100%
+
+	&-e
+		cursor ew-resize
+		height 100%
+		right 0
+		top 0
+		width 5px
+
+	&-s
+		bottom 0
+		cursor ns-resize
+		height 5px
+		left 0
+		width 100%
+
+	&-w
+		cursor ew-resize
+		height 100%
+		left 0
+		top 0
+		width 5px
+
+	&-se
+		bottom 0
+		cursor nwse-resize
+		height 9px
+		right 0
+		width 9px
+
+	&-sw
+		bottom 0
+		cursor nesw-resize
+		height 9px
+		left 0
+		width 9px
+
+	&-ne
+		cursor nesw-resize
+		height 9px
+		right 0
+		top -5px
+		width 9px
+
+	&-nw
+		cursor nwse-resize
+		height 9px
+		left -5px
+		top -5px
+		width 9px
+
+/* UI Tabs */
+.ui-new-tab
+	width 25px
+	height 24px
+	border 1px solid #a2a0a2
+	border-right 0 none
+	background #b7b5b7
+	color #636163
+	text-align center
+	font-weight 300
+	font-size 18px
+	&:hover
+		background #aaa9aa
+	&:active
+		background #9b999b
+	&__button
+		line-height 20px
+		vertical-align top
+
+.ui-tabs
+	width calc(100% - 25px)
+	height 24px
+	margin-top -10px
+	.ui-tabs__list
+		width 100%
+		height 100%
+		display flex
+		flex-flow row wrap
+	.ui-tabs__item
+		position relative
+		text-align center
+		font-size 11px
+		flex 1 0 auto
+		line-height 23px
+		background #b4b2b4
+		border 1px solid #989698
+		&:hover
+			background #acaaac
+		&:hover .close-tab
+			opacity 1
+		
+		&.current-tab
+			background #cfcecf
+			border-top 1px solid #b3b0b3
+			border-left 0 none
+			border-right 0 none
+			&:hover
+				background #cfcecf
+			.close-tab:hover
+				background-color #ABAAAB
+
+		.close-tab
+			border-radius 3px
+			height 16px
+			left 3px
+			opacity 0
+			position absolute
+			top 3px
+			width 16px
+			&:hover
+				background-color #969496
+			&:active
+				background-color #9B9A9B
+			&:before, &:after
+				background-color #666
+				content ''
+				position absolute
+				transform rotate(45deg);
+			&:before
+				height 11px
+				left 50%
+				margin-top -5px
+				top 50%
+				width 1px
+			&:after
+				height 1px
+				left 50%
+				margin-left -5px
+				top 50%
+				width 11px
+
+
+
+
+
+
+
+
+
+
+
+
+
+

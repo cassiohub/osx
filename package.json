@@ -1,0 +1,23 @@
+{
+  "name": "cassio-osx",
+  "version": "1.0.0",
+  "description": "OSX built in pure html, css and javascript",
+  "main": "app.js",
+  "scripts": {
+    "stylus": "stylus -w stylus/style.styl -o css/",
+    "server": "http-server .",
+    "open:dev": "opener http://localhost:8080",
+    "dev": "npm run open:dev -s & parallelshell 'npm run stylus -s' 'npm run server'"
+  },
+  "keywords": [
+    "OSX"
+  ],
+  "author": "Cassio Hubner",
+  "license": "WTFPL",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "opener": "^1.4.1",
+    "parallelshell": "^2.0.0",
+    "stylus": "^0.54.0"
+  }
+}
